@@ -1,0 +1,46 @@
+﻿@using System
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sales</title>
+
+	<style type="text/css">
+
+		body {
+			text-align: left;
+		}
+
+	</style>
+
+</head>
+<body>
+
+    <div>
+        <p>
+            @foreach (var x in Model)
+            {
+                <p>@x.Description</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Description</td>
+                        <td>Amount</td>
+                    </tr>
+                    </thead>
+                    @foreach (var l in x.Lines)
+                    {
+                        <tr>
+                            <td>@l.Description</td>
+                            <td>@l.Amount</td>
+                        </tr>
+                    }
+                </table>
+
+                <p>Total = @x.Total</p>
+            }
+        </p>
+    </div>
+
+</body>
+</html>

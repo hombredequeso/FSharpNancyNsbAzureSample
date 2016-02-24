@@ -1,0 +1,39 @@
+﻿@using System
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo Website</title>
+
+	<style type="text/css">
+
+		body {
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	testing
+    @Model.TestKey
+    <div>
+        <p>
+            @foreach (var x in Model.Items)
+            {
+                <p>@x</p>
+            }
+        </p>
+    </div>
+    @DateTime.Now
+    <div>
+        <p>
+            @foreach (var x in Model.Customers)
+            {
+                <p>@x.Name</p>
+            }
+        </p>
+    </div>
+</body>
+</html>
